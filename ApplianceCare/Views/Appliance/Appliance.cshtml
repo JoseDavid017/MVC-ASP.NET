@@ -1,0 +1,43 @@
+﻿@model List<ApplianceCare.Models.Appliance>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Appliance</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container"> 
+        <h1 class="h1">Appliances</h1>
+        <p>The following are the available appliances:</p>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Brand</th>
+                    <th>Model</th>
+                    <th>Price</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                @foreach (var appliance in Model)
+                {
+                    <tr>
+                        <td>@appliance.type</td>
+                        <td>@appliance.Brand</td>
+                        <td>@appliance.Model</td>
+                        <td>@appliance.Price.ToString("C")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

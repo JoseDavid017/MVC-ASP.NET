@@ -1,0 +1,28 @@
+﻿@model List<ApplianceCare.Models.Technician>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Technician</title>
+</head>
+<body>
+    <div> 
+        <h1>Technicians</h1>
+        <p>The available technicians are listed below:</p>
+        <ul>
+            @foreach (var technician in Model)
+            {
+                <li>
+                    <strong>@technician.Name @technician.LastName</strong> - @technician.Experience of experience in @technician.Specialty
+                </li>
+            }
+        </ul>
+    </div>
+</body>
+</html>
